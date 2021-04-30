@@ -99,7 +99,7 @@ public class Main extends Canvas implements Runnable {
 
         eg.setColor(Color.WHITE);
         eg.setFont(new Font("arial",Font.BOLD,18));
-        eg.drawString("Engine Test",WIDTH/SCALE,30);
+        eg.drawString("Engine Test",WIDTH/SCALE,180);
 
         /**********/
         eg.dispose();
