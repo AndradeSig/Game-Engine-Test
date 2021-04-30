@@ -1,10 +1,15 @@
 package yndye.main;
 
+import yndye.entities.Cube;
+import yndye.entities.Entity;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main extends Canvas implements Runnable {
 
@@ -17,28 +22,32 @@ public class Main extends Canvas implements Runnable {
     // THREAD
     public Thread thread;
 
-    // FRAMES
-    public int frames = 0;
-
     // WIDTH - HEIGHT - SCALE VARIABLES
-    public static final int WIDTH = 260;
-    public static final int HEIGHT = 160;
-    public static double SCALE = 3;
+    public static final int WIDTH = 360;
+    public static final int HEIGHT = 210;
+    public static final int SCALE = 3;
 
     // BUFFEREDIMAGE VARIABLE
     private BufferedImage renderImage;
 
+    // OTHER CLASS
+    public static List<Entity> entities; // ENTITY CLASS
+    public static Cube cube; // CUBE CLASS
+
     public Main(){
-        // Set Window Size
-        setPreferredSize(new Dimension((int)(WIDTH*SCALE),(int)(HEIGHT*SCALE)));
         Window();
         renderImage = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
+
+        entities = new ArrayList<Entity>();
+        cube = new Cube(50,100,32,32);
+        entities.add(cube);
     }
 
     public void Window(){
+        setPreferredSize(new Dimension(WIDTH*SCALE,HEIGHT*SCALE));
         frame = new JFrame("Engine Test");
         frame.add(this);
-        frame.setResizable(true);
+        frame.setResizable(false);
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -62,36 +71,33 @@ public class Main extends Canvas implements Runnable {
     }
 
     public void update(){
-
+        for(int i = 0; i < entities.size(); i++){
+            Entity e = entities.get(i);
+            e.update();
+        }
     }
 
     public void render(){
-        BufferStrategy bs = getBufferStrategy();
-        if(bs == null) {createBufferStrategy(3); return;};
-
+        BufferStrategy bs = this.getBufferStrategy();
+        if(bs == null){this.createBufferStrategy(3);return;}
         Graphics eg = renderImage.getGraphics();
+        eg.setColor(new Color(0,0,0));
+        eg.fillRect(0,0,WIDTH,HEIGHT);
+        /**** RENDER ENGINE *****/
+
+        for(int i = 0; i < entities.size(); i++){
+            Entity e = entities.get(i);
+            e.render(eg);
+        }
+
+        eg.setColor(Color.WHITE);
+        eg.setFont(new Font("arial",Font.BOLD,18));
+        eg.drawString("Engine Test",WIDTH/SCALE,30);
+
+        /**********/
         eg.dispose();
         eg = bs.getDrawGraphics();
-
-        double fX = frame.getContentPane().getWidth() / (double)WIDTH;
-        double fY = frame.getContentPane().getHeight() / (double)HEIGHT;
-        if(fX > fY) SCALE = fY; else SCALE = fX;
-        int ww = (int)(WIDTH*SCALE);
-        int hh = (int)(HEIGHT*SCALE);
-        int xw = frame.getContentPane().getWidth()/2 - ww/2;
-        int yh = frame.getContentPane().getHeight()/2 - hh/2;
-
-        // RENDER -->
-        eg.setColor(Color.BLACK);
-        eg.fillRect(0,0,frame.getContentPane().getWidth(),frame.getContentPane().getHeight());
-
-        eg.drawImage(renderImage,xw,yh,ww,hh,null);
-
-        // DRAW THE TEXT "ENGINE TEST"
-        eg.setColor(new Color((int)Math.floor(Math.random() * 100),(int)Math.floor(Math.random() * 100),(int)Math.floor(Math.random() * 100)));
-        eg.setFont(new Font("arial",Font.BOLD,32));
-        eg.drawString("Engine Test",120,100);
-
+        eg.drawImage(renderImage,0,0,WIDTH*SCALE,HEIGHT*SCALE,null); // DRAW IMAGE "RENDER IMAGE"
         bs.show();
     }
 
@@ -101,10 +107,11 @@ public class Main extends Canvas implements Runnable {
         double amountUpdataes = 60.0;
         double ns = 1000000000 / amountUpdataes;
         double delta = 0;
+        int frames = 0;
         double timer = System.currentTimeMillis();
         while(running){
             long now = System.nanoTime();
-            delta += (now - lastTime) / ns;
+            delta+= (now - lastTime) / ns;
             lastTime = now;
             if(delta >= 1){
                 update();
