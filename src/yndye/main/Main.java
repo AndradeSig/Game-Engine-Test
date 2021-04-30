@@ -1,5 +1,6 @@
 package yndye.main;
 
+import yndye.Generator.Generator;
 import yndye.entities.Cube;
 import yndye.entities.Entity;
 
@@ -10,6 +11,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Main extends Canvas implements Runnable {
 
@@ -22,6 +24,9 @@ public class Main extends Canvas implements Runnable {
     // THREAD
     public Thread thread;
 
+    // FRAME VARIABLE
+    public int frames = 0;
+
     // WIDTH - HEIGHT - SCALE VARIABLES
     public static final int WIDTH = 360;
     public static final int HEIGHT = 210;
@@ -30,17 +35,18 @@ public class Main extends Canvas implements Runnable {
     // BUFFEREDIMAGE VARIABLE
     private BufferedImage renderImage;
 
+
     // OTHER CLASS
     public static List<Entity> entities; // ENTITY CLASS
-    public static Cube cube; // CUBE CLASS
+    public static Generator generator; // GENERATOR CLASS
 
     public Main(){
-        Window();
+        Window(); // Create Window
         renderImage = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 
+        // OTHER CLASS
         entities = new ArrayList<Entity>();
-        cube = new Cube(50,100,32,32);
-        entities.add(cube);
+        generator = new Generator();
     }
 
     public void Window(){
@@ -75,6 +81,7 @@ public class Main extends Canvas implements Runnable {
             Entity e = entities.get(i);
             e.update();
         }
+        generator.update();
     }
 
     public void render(){
@@ -107,7 +114,6 @@ public class Main extends Canvas implements Runnable {
         double amountUpdataes = 60.0;
         double ns = 1000000000 / amountUpdataes;
         double delta = 0;
-        int frames = 0;
         double timer = System.currentTimeMillis();
         while(running){
             long now = System.nanoTime();
@@ -120,6 +126,7 @@ public class Main extends Canvas implements Runnable {
                 delta--;
             }
             if(System.currentTimeMillis() - timer >= 1000){
+                System.out.println("Fps: "+frames);
                 frames = 0;
                 timer+=1000;
             }
