@@ -2,18 +2,15 @@
 My Engine in Java!
 
 
------ English:
-Engine being made for testing.
-Language: Java
-Libs: Canvas
+## README ##
 
-version 1
------ 
+"java -jar EngineTest.jar" -> Command to start the game through Terminal/Cmd
+see the fps;
+see the threads.
 
------ Portuguese:
-Engine sendo feita para testes.
-Linguagem: Java
-Libs: Canvas
 
-versão 1
------ 
+[--]
+Notes: 
+Install JAVA to execute this program.
+To install JAVA in WINDOWS/MAC go to website: https: https://www.java.com/
+To install JAVA in LINUX use the command in Terminal "sudo apt-get install default-jdk"
