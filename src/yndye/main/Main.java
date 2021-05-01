@@ -101,6 +101,9 @@ public class Main extends Canvas implements Runnable {
         eg.setFont(new Font("arial",Font.BOLD,18));
         eg.drawString("Engine Test",WIDTH/SCALE,180);
 
+        eg.setFont(new Font("arial",Font.BOLD,12));
+        eg.drawString("Entities: "+entities.size(),WIDTH/SCALE,200);
+
         /**********/
         eg.dispose();
         eg = bs.getDrawGraphics();
@@ -126,7 +129,7 @@ public class Main extends Canvas implements Runnable {
                 delta--;
             }
             if(System.currentTimeMillis() - timer >= 1000){
-                System.out.println("Fps: "+frames);
+                System.out.println("FPS: "+frames);
                 frames = 0;
                 timer+=1000;
             }

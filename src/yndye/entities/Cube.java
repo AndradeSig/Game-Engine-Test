@@ -27,6 +27,7 @@ public class Cube extends Entity{
 
     public void render(Graphics eg){
         eg.setColor(new Color((int)Math.floor(Math.random() * 100),(int)Math.floor(Math.random() * 100),(int)Math.floor(Math.random() * 100)));
-        eg.fillRect(this.getX(),this.getY(),16,16);
+        eg.setColor(new Color((int)Math.floor(Math.random() * 100),(int)Math.floor(Math.random() * 100),(int)Math.floor(Math.random() * 100)));
+        eg.fillRect(this.getX(),this.getY(),32,32);
     }
 }
