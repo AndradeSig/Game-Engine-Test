@@ -1,17 +1,14 @@
 package yndye.main;
 
 import yndye.Generator.Generator;
-import yndye.entities.Cube;
 import yndye.entities.Entity;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Main extends Canvas implements Runnable {
 
