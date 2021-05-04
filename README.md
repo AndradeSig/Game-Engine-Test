@@ -21,5 +21,3 @@ Caso abrir essa Janela, o programa foi inicializado com sucesso.
 <br/>
 Aproveite o teste, o meu máximo de ***"entities"*** pegos foram _1481_
 
-
-
