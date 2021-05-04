@@ -1,11 +1,15 @@
 # ENGINE TEST
 
 A Engine foi escrita em Java, e está em fase de testes. <img src="https://logospng.org/download/java/logo-java-256.png" width="68px" align="center">
+####
 Para você poder usar a Engine, primeiramente você vai precisar do Java instalado em seu Computador.
+####
 É bem simples de instalar, basta entrar no site do Java(Oracle): https://www.java.com/
+####
 Caso você esteja no Linux, basta usar o comando em seu terminal: ***sudo apt-get install default-jdk***
 ####
 Para abrir o programa da forma certa(para testes), abra-o pelo cmd/terminal.
+####
 É bem simples também! Basta dar o comando: ***java -jar EngineTest.jar***
 ####
 Após a inicialização do programa, vai abrir 2 janelas. A primeira, é a janela do programa, e a segunda, vai ser a janela do cmd/terminal, mostrando as informações(fps).
@@ -14,6 +18,7 @@ Após a inicialização do programa, vai abrir 2 janelas. A primeira, é a janel
 
 #####
 Caso abrir essa Janela, o programa foi inicializado com sucesso.
+####
 Aproveite o teste, o meu máximo de ***"entities"*** pegos foram _1481_
 
 
