@@ -4,8 +4,7 @@ My Engine in Java!
 
 ## README ##
 ###
-Este programa foi escrito em java! <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdkC9mUx3cenyy7MRrkpqFys-0wBqMbbrCrOqQs1XlFilGbU3S7Q-vd3x5xhBovzhoHrs&usqp=CAU")
-">
+Este programa foi escrito em java!
 ###
 Para usar a Engine, você deve possuir Java em seu computador.
 <br/>
