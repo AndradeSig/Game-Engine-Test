@@ -4,13 +4,12 @@ My Engine in Java!
 
 ## README ##
 ###
-"java -jar EngineTest.jar" -> Command to start the game through Terminal/Cm
-see the fps;
-see the threads.
+Este programa foi escrito em java! <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdkC9mUx3cenyy7MRrkpqFys-0wBqMbbrCrOqQs1XlFilGbU3S7Q-vd3x5xhBovzhoHrs&usqp=CAU")
+">
 ###
-[--]
-Notes: 
-###
-Install JAVA to execute this program.
-To install JAVA in WINDOWS/MAC go to website: https: https://www.java.com/
-To install JAVA in LINUX use the command in Terminal "sudo apt-get install default-jdk"
+Para usar a Engine, você deve possuir Java em seu computador.
+<br/>
+Para instalar, basta entrar no site do Java(Oracle).
+<br/>
+Para instalar Java no Sistema Operacional Linux, basta usar o comando: <span style="Color:#3eb54f">sudo apt-get install default-jdk</span>
+
