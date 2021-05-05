@@ -114,7 +114,7 @@ public class Main extends Canvas implements Runnable {
         bs.show(); // Mostrar as Buffers
     }
 
-    // MÉTODO "RUN"(RODAS OS FPS)
+    // MÉTODO "RUN"(RODAR OS FPS)
     @Override
     public void run() {
         long lastTime = System.nanoTime(); // Pega o tempo do computador em nanosegundos
