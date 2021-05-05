@@ -1,10 +1,13 @@
 package yndye.main;
 
 import yndye.Generator.Generator;
+import yndye.entities.Cube;
 import yndye.entities.Entity;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -36,6 +39,9 @@ public class Main extends Canvas implements Runnable {
     // OTHER CLASS
     public static List<Entity> entities; // ENTITY CLASS
     public static Generator generator; // GENERATOR CLASS
+
+    public static int mouseX;
+    public static int mouseY;
 
     public Main(){
         Window(); // Create Window

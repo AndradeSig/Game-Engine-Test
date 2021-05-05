@@ -13,6 +13,9 @@ public class Cube extends Entity{
     private int acel = 0;
     private int mass = (int)speed*getWidth()/3;
 
+    private double ax;
+    private double rx;
+
     public Cube(double x, double y, int width, int height) {
         super(x, y, width, height);
     }
@@ -26,7 +29,8 @@ public class Cube extends Entity{
     }
 
     public void render(Graphics eg){
-        eg.setColor(new Color((int)Math.floor(Math.random() * 100),(int)Math.floor(Math.random() * 100),(int)Math.floor(Math.random() * 100)));
-        eg.fillRect(this.getX(),this.getY(),32,32);
+        Graphics2D g2 = (Graphics2D) eg;
+        g2.setColor(new Color((int)Math.floor(Math.random() * 100),(int)Math.floor(Math.random() * 100),(int)Math.floor(Math.random() * 100)));
+        g2.fillRect(this.getX(),this.getY(),32,32);
     }
 }
