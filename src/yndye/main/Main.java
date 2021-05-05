@@ -63,7 +63,8 @@ public class Main extends Canvas implements Runnable {
         thread.start(); // Iniciar as Threads
     }
 
-    // FUNÇÃO PARA INDICAR A FINALIZAÇÃO DO PROGRAMA(PARA FINALIZAR AS THREADS). ESTE MÉTODO SERVE PARA FINALIZAR AS THREADS, E NÃO DEIXAR AS THREADS RODANDO MESMO DEEPOIS DE TER FINALIZADO O PROGRAMA
+    // FUNÇÃO PARA INDICAR A FINALIZAÇÃO DO PROGRAMA(PARA FINALIZAR AS THREADS).
+    // ESTE MÉTODO SERVE PARA FINALIZAR AS THREADS, E NÃO DEIXAR AS THREADS RODANDO MESMO DEEPOIS DE TER FINALIZADO O PROGRAMA
     public synchronized void stop(){
         running = false; // Parar o método "run"
         try {thread.join();}catch(InterruptedException e){e.printStackTrace();} // Finalizar as Threads
