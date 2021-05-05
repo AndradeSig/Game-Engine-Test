@@ -20,7 +20,7 @@ public class Cube extends Entity{
     public void update(){
         x+=(speed*mass)/acel;
         if(this.getX() > Main.WIDTH){
-            x = Main.WIDTH - Main.WIDTH;
+            x = Main.WIDTH - Main.WIDTH; // Caso a posição X do jogador for maior que a largura da janela, a posição X volta para o começo da janela
             if(acel < 15) acel++;
         }
     }

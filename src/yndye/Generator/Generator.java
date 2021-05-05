@@ -1,3 +1,10 @@
+/***
+ *
+ * [ CLASSE PARA A REALIZAÇÃO DA CRIAÇÃO DOS CUBOS
+ *
+ */
+
+
 package yndye.Generator;
 
 import yndye.entities.Cube;
