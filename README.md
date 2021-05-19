@@ -14,7 +14,7 @@ Para abrir o programa da forma certa(para testes), abra-o pelo cmd/terminal.
 <br/>
 Após a inicialização do programa, vai abrir 2 janelas. A primeira, é a janela do programa, e a segunda, vai ser a janela do cmd/terminal, mostrando as informações(fps).
 ####
-<img src="https://cdn.discordapp.com/attachments/837039667265142838/839162135677239357/unknown.png">
+<img src="https://media.discordapp.net/attachments/843628319975014423/844586696749219861/unknown.png">
 
 #####
 Caso abrir essa Janela, o programa foi inicializado com sucesso.
